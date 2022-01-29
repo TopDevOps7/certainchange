@@ -41,7 +41,7 @@ export default function Navigation(props) {
   const roadmapSection = useScrollSection("roadmap");
   const ourteamSection = useScrollSection("ourteam");
   const gallerySection = useScrollSection("gallery");
-  const stackingSection = useScrollSection("staking");
+  const commingSoonSection = useScrollSection("commingsoon");
 
   const location = useLocation();
   const { pathname } = location;
@@ -122,14 +122,12 @@ export default function Navigation(props) {
                         onClick={gallerySection.onClick}
                         selected={gallerySection.selected}
                       >
-                        {/* <NavLink exact to="/Gallery">Gallery</NavLink> */}
                         Gallery
                       </li>
                       <li
-                        onClick={stackingSection.onClick}
-                        selected={stackingSection.selected}
+                        onClick={commingSoonSection.onClick}
+                        selected={commingSoonSection.selected}
                       >
-                        {/* <a href="/Gallery/#staking">Staking</a> */}
                         Staking
                       </li>
                       <li>
@@ -137,9 +135,6 @@ export default function Navigation(props) {
                           White Paper
                         </NavLink>
                       </li>
-                      {/* <li onClick={stackingSection.onClick} selected={stackingSection.selected}>
-                                    Staking
-                                </li> */}
                     </ul>
                   ) : (
                     <ul>
@@ -208,63 +203,6 @@ export default function Navigation(props) {
               </Grid>
             </Grid>
           </Box>
-
-          {/* <div className={`Mobile_Links ${toggle ? "active" : ""}`}>
-            {CurrentLocation[1] === "home" || CurrentLocation[1] === "" ? (
-              <ul>
-                <li
-                  onClick={mintSection.onClick}
-                  selected={mintSection.selected}
-                >
-                  Mint
-                </li>
-                <li
-                  onClick={ourvisionSection.onClick}
-                  selected={ourvisionSection.selected}
-                >
-                  Our Vision
-                </li>
-                <li
-                  onClick={roadmapSection.onClick}
-                  selected={roadmapSection.selected}
-                >
-                  Roadmap
-                </li>
-                <li
-                  onClick={ourteamSection.onClick}
-                  selected={ourteamSection.selected}
-                >
-                  Our team
-                </li>
-                <li
-                  onClick={gallerySection.onClick}
-                  selected={gallerySection.selected}
-                >
-                  Gallery
-                </li>
-                <li
-                  onClick={stackingSection.onClick}
-                  selected={stackingSection.selected}
-                >
-                  Staking
-                </li>
-                <li>
-                  <NavLink exact to="/whitepaper">
-                    White Paper
-                  </NavLink>
-                </li>
-              </ul>
-            ) : (
-              <ul>
-                <li>
-                  <NavLink to="/home">Home</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/whitepaper">White Paper</NavLink>
-                </li>
-              </ul>
-            )}
-          </div> */}
         </div>
       </div>
     </section>

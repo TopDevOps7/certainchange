@@ -13,6 +13,8 @@ import { Tab, TabPanel, Tabs, TabList } from "react-web-tabs";
 import "react-web-tabs/dist/react-web-tabs.css";
 import Footer from "./../Home/Footer";
 import Carousel from "react-multi-carousel";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 import image1 from "../../Assets/Gallery Images/1.jpeg";
 import image2 from "../../Assets/Gallery Images/2.jpeg";
@@ -51,7 +53,50 @@ import screen_5 from "../../Assets/images/Screenshot_5.png";
 import screen_6 from "../../Assets/images/Screenshot_6.png";
 import screen_7 from "../../Assets/images/Screenshot_7.png";
 import screen_8 from "../../Assets/images/Screenshot_8.png";
-const imagearray1 = [image1, image28, image29, image30];
+const imagearray = [
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
+  image7,
+  image8,
+  image9,
+  image10,
+  image11,
+  image12,
+  image13,
+  image14,
+  image15,
+  image16,
+  image17,
+  image18,
+  image19,
+  image20,
+  image21,
+  image22,
+  image23,
+  image24,
+  image25,
+  image26,
+  image27,
+  image28,
+  image29,
+  image30,
+];
+const imagearray1 = [
+  image1,
+  image28,
+  image29,
+  image30,
+  image16,
+  image17,
+  image18,
+  image19,
+  image20,
+  image21,
+];
 const imagearray2 = [image4, image7, image13, image21];
 const imagearray3 = [image5, image2, image14, image17];
 const imagearray4 = [image7, image11, image15, image29];
@@ -59,11 +104,11 @@ const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
-    items: 7,
+    items: 4,
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 5,
+    items: 3,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
@@ -113,6 +158,52 @@ const TeamData = [
   },
 ];
 export default function Whitepaper() {
+  const CustomRightArrow = ({ onClick, ...rest }) => {
+    const {
+      onMove,
+      carouselState: { currentSlide, deviceType },
+    } = rest;
+    // onMove means if dragging or swiping in progress.
+    return (
+      <button
+        onClick={() => onMove()}
+        style={{ position: "absolute", right: "0px" }}
+      >
+        Next
+      </button>
+    );
+  };
+  const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
+    const {
+      carouselState: { currentSlide },
+    } = rest;
+    return (
+      <div
+        className="carousel-button-group"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: "10px",
+        }}
+      >
+        <ArrowBackIosIcon
+          className={currentSlide === 0 ? "disable" : ""}
+          onClick={() => previous()}
+          style={{ cursor: "pointer", color: "#FFF", fontSize: "30px" }}
+        />
+        <ArrowForwardIosIcon
+          style={{
+            cursor: "pointer",
+            color: "#FFF",
+            marginLeft: "10px",
+            fontSize: "30px",
+          }}
+          onClick={() => next()}
+        />
+      </div>
+    );
+  };
   return (
     <>
       <div className="whitepaper_container">
@@ -143,20 +234,9 @@ export default function Whitepaper() {
                 <Tab tabFor="vertical-tab-eleven">Charities</Tab>
                 <Tab tabFor="vertical-tab-twelve">Other Features</Tab>
               </TabList>
-              <TabPanel tabId="vertical-tab-one">
+              <TabPanel tabId="vertical-tab-one" style={{ overflowX: "clip" }}>
                 <Box sx={{ flexGrow: 1 }}>
                   <Grid container spacing={2}>
-                    <Grid item xs={3}>
-                      {imagearray1.map((value, i) => (
-                        <img
-                          key={i}
-                          src={value}
-                          width="230px"
-                          height="200px"
-                          alt="image"
-                        />
-                      ))}
-                    </Grid>
                     <Grid item xs={9}>
                       <h2 className="white_heading">Our Vision</h2>
                       <p className="white_content" style={{ fontSize: "25px" }}>
@@ -171,30 +251,11 @@ export default function Whitepaper() {
                     </Grid>
                   </Grid>
                 </Box>
-                <h3 className="white_heading">Our Team</h3>
-                <div className="row">
-                  {TeamData.map((Items, i) => (
-                    <div className="col-md-3">
-                      <div className="white_team_box">
-                        <div className="white_box_img">
-                          <img
-                            src={Items.image}
-                            alt=""
-                            height="300px"
-                            width="300px"
-                          />
-                        </div>
-                        <h3 className="name">{Items.name}</h3>
-                        <span className="role">{Items.position}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
               </TabPanel>
-              <TabPanel tabId="vertical-tab-two">
+              <TabPanel tabId="vertical-tab-two" style={{ overflowX: "clip" }}>
                 <Box sx={{ flexGrow: 1 }}>
                   <Grid container spacing={2}>
-                    <Grid item xs={8}>
+                    <Grid item xs={10}>
                       <h3 className="white_heading">Nautical Narwhals</h3>
                       <ul className="white_points">
                         <li>Collection size: 5757</li>
@@ -215,7 +276,7 @@ export default function Whitepaper() {
                         <li>Defender FAQ*</li>
                       </ul>
                     </Grid>
-                    <Grid item xs={4} style={{ display: "grid" }}>
+                    {/* <Grid item xs={4} style={{ display: "grid" }}>
                       {imagearray2.map((value, i) => (
                         <img
                           key={i}
@@ -225,11 +286,14 @@ export default function Whitepaper() {
                           alt="image"
                         />
                       ))}
-                    </Grid>
+                    </Grid> */}
                   </Grid>
                 </Box>
               </TabPanel>
-              <TabPanel tabId="vertical-tab-three">
+              <TabPanel
+                tabId="vertical-tab-three"
+                style={{ overflowX: "clip" }}
+              >
                 <Box sx={{ flexGrow: 1 }}>
                   <Grid container spacing={2}>
                     <Grid item xs={8}>
@@ -253,31 +317,13 @@ export default function Whitepaper() {
                         completed.
                       </p>
                       <p className="white_content">
-                        <img src={trans} alt="" />
+                        <img src={trans} width="400px" alt="" />
                       </p>
-                    </Grid>
-                    <Grid
-                      item
-                      xs={4}
-                      style={{
-                        display: "grid",
-                        background: "#36A9A3",
-                        justifyContent: "center",
-                        alignItems: "center",
-                      }}
-                    >
-                      <img
-                        src={screen_3}
-                        width="100%"
-                        height="70%"
-                        style={{ background: "#64F2F3" }}
-                        alt="image"
-                      />
                     </Grid>
                   </Grid>
                 </Box>
               </TabPanel>
-              <TabPanel tabId="vertical-tab-four">
+              <TabPanel tabId="vertical-tab-four" style={{ overflowX: "clip" }}>
                 <Box sx={{ flexGrow: 1 }}>
                   <Grid container spacing={2}>
                     <Grid item xs={12}>
@@ -302,30 +348,10 @@ export default function Whitepaper() {
                         Nonetheless, nothing has been decided as of the present.
                       </p>
                     </Grid>
-                    <Grid
-                      item
-                      xs={12}
-                      style={{
-                        display: "flex",
-                      }}
-                    >
-                      <img
-                        src={image18}
-                        width="380px"
-                        style={{ background: "#64F2F3" }}
-                        alt="image"
-                      />
-                      <img
-                        src={image20}
-                        width="380px"
-                        style={{ background: "#64F2F3" }}
-                        alt="image"
-                      />
-                    </Grid>
                   </Grid>
                 </Box>
               </TabPanel>
-              <TabPanel tabId="vertical-tab-five">
+              <TabPanel tabId="vertical-tab-five" style={{ overflowX: "clip" }}>
                 <Box sx={{ flexGrow: 1 }}>
                   <Grid container spacing={2}>
                     <Grid item xs={12}>
@@ -353,24 +379,12 @@ export default function Whitepaper() {
                         </li>
                       </ul>
                     </Grid>
-                    <Grid
-                      item
-                      xs={12}
-                      style={{
-                        display: "flex",
-                      }}
-                    >
-                      <img src={screen_4} width="100%" alt="image_4" />
-                    </Grid>
                   </Grid>
                 </Box>
               </TabPanel>
-              <TabPanel tabId="vertical-tab-six">
+              <TabPanel tabId="vertical-tab-six" style={{ overflowX: "clip" }}>
                 <Box sx={{ flexGrow: 1 }}>
                   <Grid container spacing={2}>
-                    <Grid item xs={3}>
-                      <img src={screen_5} height="100%" alt="image5" />
-                    </Grid>
                     <Grid item xs={9}>
                       <h3 className="white_heading">Partnerships</h3>
                       <p className="white_content">
@@ -412,95 +426,114 @@ export default function Whitepaper() {
                   </Grid>
                 </Box>
               </TabPanel>
-              <TabPanel tabId="vertical-tab-seven">
-                <p className="white_content">
-                  The P2E and Metaverse will be our long term project. We are
-                  certain that cryptogaming will serve as a catalyst for the
-                  widespread adoption of NFT and cryptocurrency.Therefore, we
-                  want Nautical Narwhals and our metaverse partner companies to
-                  be atthe forefront of this wave of consumer adoption.
-                </p>
-                <h3 className="white_heading mt-4">Mobile game</h3>
-                <p className="white_content">
-                  The first phase will be to develop an iOS/Android P2E game.
-                  The game's rules willmost likely be straightforward, and it
-                  will be developed as a means of earning $TUSKfor holders. It
-                  will also be open for public download. Nevertheless,
-                  non-holders will notbe able to earn $TUSK. In any case,, all
-                  users will have the option to buy $TUSK to usein the game.
-                  Additional details will be available in Q1 2022.
-                </p>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    width: "80%",
-                  }}
-                >
-                  <img src={screen_6} alt="mobilegame" width="35%" />
-                </div>
-                <h3 className="white_heading mt-4">Metaverse</h3>
-                <p className="white_content">
-                  We want to construct an open world metaverse, using the
-                  ocean/underwater as ourcore subject. At the moment, we are in
-                  discussions with other ocean-themed NFTinitiatives about
-                  collaborating on this endeavour. While details are still
-                  forthcoming,we see this aquatic environment as a cross between
-                  The Sims and Club Penguin.
-                </p>
-                <p className="white_content">
-                  Players will be able to purchase houses, household goods,
-                  automobiles, and pets.Moreover, holders will be able to
-                  establish a family, visit the houses of other pals, andplay
-                  games together. Once co ncepts are mostly completed, this
-                  Metaverse will getits own whitepaper.
-                </p>
-                <p className="white_content">
-                  There will also be a way for holders to monetize their NFTs.
-                  We are exploring severaldifferent ways to go about this.
-                  Examples include:
-                </p>
-                <ul className="white_points">
-                  <li>
-                    Renting your NFT for other’s to play with and earn $TUSK
-                  </li>
-                  <li>
-                    Letting other players use your NFTs skin (you earn a
-                    commission of their $TUSK)
-                  </li>
-                </ul>
-                <h3 className="white_heading mt-5">
-                  $TUSK Utility: Marketplace
-                </h3>
-                <p className="white_content">
-                  $TUSK will be used to purchase items from the Nautical
-                  Narwhals Marketplace. Itemsmay include:
-                </p>
+              <TabPanel
+                tabId="vertical-tab-seven"
+                style={{ overflowX: "clip" }}
+              >
                 <Box sx={{ flexGrow: 1 }}>
-                  <Grid container spacing={2}>
-                    <Grid item xs={6}>
-                      <ul className="white_points">
-                        <li>Homes</li>
-                        <li>Vehicles</li>
-                        <li>Accessories for your property</li>
-                        <li>Items for your home</li>
-                        <li>Pets</li>
-                        <li>And lot’s more</li>
-                      </ul>
-                      <p className="white_content mt-3">
-                        Overall, having use cases for $TUSKwill increase it’s
-                        value.
+                  <Grid container>
+                    <Grid item xs={8} md={12}>
+                      <p className="white_content">
+                        The P2E and Metaverse will be our long term project. We
+                        are certain that cryptogaming will serve as a catalyst
+                        for the widespread adoption of NFT and
+                        cryptocurrency.Therefore, we want Nautical Narwhals and
+                        our metaverse partner companies to be atthe forefront of
+                        this wave of consumer adoption.
                       </p>
+                      <h3 className="white_heading mt-4">Mobile game</h3>
+                      <p className="white_content">
+                        The first phase will be to develop an iOS/Android P2E
+                        game. The game's rules willmost likely be
+                        straightforward, and it will be developed as a means of
+                        earning $TUSKfor holders. It will also be open for
+                        public download. Nevertheless, non-holders will notbe
+                        able to earn $TUSK. In any case,, all users will have
+                        the option to buy $TUSK to usein the game. Additional
+                        details will be available in Q1 2022.
+                      </p>
+                      <h3 className="white_heading mt-4">Metaverse</h3>
+                      <p className="white_content">
+                        We want to construct an open world metaverse, using the
+                        ocean/underwater as ourcore subject. At the moment, we
+                        are in discussions with other ocean-themed
+                        NFTinitiatives about collaborating on this endeavour.
+                        While details are still forthcoming,we see this aquatic
+                        environment as a cross between The Sims and Club
+                        Penguin.
+                      </p>
+                      <p className="white_content">
+                        Players will be able to purchase houses, household
+                        goods, automobiles, and pets.Moreover, holders will be
+                        able to establish a family, visit the houses of other
+                        pals, andplay games together. Once co ncepts are mostly
+                        completed, this Metaverse will getits own whitepaper.
+                      </p>
+                      <p className="white_content">
+                        There will also be a way for holders to monetize their
+                        NFTs. We are exploring severaldifferent ways to go about
+                        this. Examples include:
+                      </p>
+                      {/* <ul className="white_points">
+                        <li>
+                          Renting your NFT for other’s to play with and earn
+                          $TUSK
+                        </li>
+                        <li>
+                          Letting other players use your NFTs skin (you earn a
+                          commission of their $TUSK)
+                        </li>
+                      </ul>
+                      <h3 className="white_heading mt-5">
+                        $TUSK Utility: Marketplace
+                      </h3>
+                      <p className="white_content">
+                        $TUSK will be used to purchase items from the Nautical
+                        Narwhals Marketplace. Itemsmay include:
+                      </p> */}
+                      {/* <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          width: "80%",
+                        }}
+                      >
+                        <img src={screen_6} alt="mobilegame" width="35%" />
+                      </div> */}
                     </Grid>
-                    <Grid item xs={4}>
-                      <div style={{ borderRadius: "10px" }}>
-                        <img src={screen_7} width="100%" alt="image5" />
-                      </div>
-                    </Grid>
+                    <Grid item xs={8} md={12}></Grid>
+                    {/* <Grid md={12}>
+                      <Box sx={{ flexGrow: 1 }}>
+                        <Grid container>
+                          <Grid item xs={6}>
+                            <ul className="white_points">
+                              <li>Homes</li>
+                              <li>Vehicles</li>
+                              <li>Accessories for your property</li>
+                              <li>Items for your home</li>
+                              <li>Pets</li>
+                              <li>And lot’s more</li>
+                            </ul>
+                            <p className="white_content mt-3">
+                              Overall, having use cases for $TUSKwill increase
+                              it’s value.
+                            </p>
+                          </Grid>
+                          <Grid item xs={4}>
+                            <div style={{ borderRadius: "10px" }}>
+                              <img src={screen_7} width="100%" alt="image5" />
+                            </div>
+                          </Grid>
+                        </Grid>
+                      </Box>
+                    </Grid> */}
                   </Grid>
                 </Box>
               </TabPanel>
-              <TabPanel tabId="vertical-tab-eight">
+              <TabPanel
+                tabId="vertical-tab-eight"
+                style={{ overflowX: "clip" }}
+              >
                 <Box sx={{ flexGrow: 1 }}>
                   <Grid container spacing={2}>
                     <Grid item xs={8}>
@@ -544,21 +577,10 @@ export default function Whitepaper() {
                         </li>
                       </ul>
                     </Grid>
-                    <Grid item xs={4}>
-                      {imagearray1.map((value, i) => (
-                        <img
-                          key={i}
-                          src={value}
-                          width="230px"
-                          height="200px"
-                          alt="image"
-                        />
-                      ))}
-                    </Grid>
                   </Grid>
                 </Box>
               </TabPanel>
-              <TabPanel tabId="vertical-tab-nine">
+              <TabPanel tabId="vertical-tab-nine" style={{ overflowX: "clip" }}>
                 <p className="white_content">
                   We strive to expand Nautical Narwhals as organically as
                   possible. Initially (pre-launch and pre-sellout), we will work
@@ -591,7 +613,7 @@ export default function Whitepaper() {
                   MARKETINGGROWTH PLAN
                 </p>
               </TabPanel>
-              <TabPanel tabId="vertical-tab-ten">
+              <TabPanel tabId="vertical-tab-ten" style={{ overflowX: "clip" }}>
                 <Box sx={{ flexGrow: 1 }}>
                   <Grid container spacing={2}>
                     <Grid item xs={12}>
@@ -604,9 +626,6 @@ export default function Whitepaper() {
                         will be determined by the number of holders in
                         eachregion.
                       </p>
-                    </Grid>
-                    <Grid item xs={12}>
-                      <img src={screen_8} width="100%" alt="community" />
                     </Grid>
                   </Grid>
                 </Box>
@@ -660,6 +679,38 @@ export default function Whitepaper() {
                 </ol>
               </TabPanel>
             </Tabs>
+          </div>
+          <div className="row">
+            <div className="col-md-6"></div>
+            <div className="col-md-6">
+              <Carousel
+                arrows={false}
+                renderButtonGroupOutside={true}
+                autoFocus={true}
+                customButtonGroup={<ButtonGroup />}
+                showDots={false}
+                autoPlay={true}
+                autoPlaySpeed={2000}
+                centerMode={false}
+                interval={2000}
+                infiniteLoop={true}
+                transitionTime={200}
+                responsive={responsive}
+                emulateTouch={false}
+              >
+                {imagearray1.map((value, i) => (
+                  <img
+                    key={i}
+                    src={value}
+                    style={{ borderRadius: "20px" }}
+                    width="230px"
+                    height="200px"
+                    draggable={false}
+                    alt="image"
+                  />
+                ))}
+              </Carousel>
+            </div>
           </div>
         </section>
         <Footer />

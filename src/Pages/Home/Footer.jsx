@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../Assets/images/logo.png";
+import Logo from "../../Assets/images/LogoRe-work3.svg";
 import Twitter from "../../Assets/images/Twitter.png";
 import Insta from "../../Assets/images/Insta.png";
 import Discord from "../../Assets/images/Discord.png";
@@ -37,15 +37,10 @@ export default function Footer() {
               <div className="row">
                 <div className="col-md-3">
                   <div className="footer_logo">
-                    <img src={Logo} alt="" />
+                    <img src={Logo} style={{ borderRadius: "50%" }} alt="" />
                   </div>
                 </div>
                 <div className="col-md-8">
-                  <span className="footer_content">
-                    The world’s first exclusive digital marketplace for crypto
-                    collectibles and non-fungible tokens (NFTs). Buy, sell, and
-                    discover digital arts.
-                  </span>
                   <div className="footer_social">
                     <a href="https://twitter.com/NarwhalNFTs">
                       <img
@@ -78,7 +73,7 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <div className="col-md-6">
+            {/* <div className="col-md-6">
               <div className="get_update">
                 <div className="get_update_header">
                   <span>Get the latest updates about nautical.</span>
@@ -88,7 +83,7 @@ export default function Footer() {
                 </div>
                 <input type="text" placeholder="Enter you email" />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="copy_right">
@@ -96,10 +91,10 @@ export default function Footer() {
             Copyright ©2021 <a href="">Nautical Narwhals</a>. All rights
             reserved. Designed & Developed by Purple Brush Digital Solutions
           </span>
-          <div className="privacy">
+          {/* <div className="privacy">
             <a href="">Privacy Policy</a>
             <a href="">Terms of Service</a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

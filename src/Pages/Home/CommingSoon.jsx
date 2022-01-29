@@ -8,30 +8,23 @@ import image4 from "../../Assets/MythicalNarwhal/Narwhal Animated.gif";
 import image5 from "../../Assets/MythicalNarwhal/POSEIDON.gif";
 import image6 from "../../Assets/MythicalNarwhal/wizpixel.gif";
 import image7 from "../../Assets/MythicalNarwhal/ZEUS.gif";
+import image8 from "../../Assets/HADES.gif";
+import image9 from "../../Assets/HORNS.gif";
+import image10 from "../../Assets/HYDRA.gif";
+import image11 from "../../Assets/Knight.gif";
+import image12 from "../../Assets/NarwhalAnimated.gif";
+import image13 from "../../Assets/NARWHALMUK.gif";
+import image14 from "../../Assets/NARWHALROBOT.gif";
+import image15 from "../../Assets/Narwhaltasty.gif";
+import image16 from "../../Assets/POSEIDON.gif";
+import image17 from "../../Assets/wizpixel.gif";
+import image18 from "../../Assets/ZEUS.gif";
+import Marquee from "react-fast-marquee";
+import { Section } from "react-scroll-section";
+
 export default function CommingSoon() {
   return (
-    <section className="comming_soon">
-      <svg
-        className="comming_soon_waves_top"
-        xml="http://www.w3.org/2000/svg"
-        link="http://www.w3.org/1999/xlink"
-        viewBox="0 24 150 28"
-        preserveAspectRatio="none"
-        shapeRendering="auto"
-      >
-        <defs>
-          <path
-            id="gentle-wave"
-            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-          />
-        </defs>
-        <g className="parallax">
-          <use href="#gentle-wave" x="48" y="0" fill="#b3ebff30" />
-          <use href="#gentle-wave" x="48" y="3" fill="#b3ebff50" />
-          <use href="#gentle-wave" x="48" y="5" fill="#b3ebff90" />
-          <use href="#gentle-wave" x="48" y="7" fill="#d4f4ff" />
-        </g>
-      </svg>
+    <Section className="comming_soon" id="commingsoon">
       <div className="container">
         <div
           className="row"
@@ -41,117 +34,151 @@ export default function CommingSoon() {
             alignItems: "center",
           }}
         >
-          <div className="col-md-2">
-            <div className="comming_soon_box" style={{ borderRadius: "10px" }}>
-              {/* <Carousel
-                autoFocus={true}
-                autoPlay={true}
-                centerMode={true}
-                infiniteLoop={true}
-                transitionTime={600}
-                showStatus={true}
-                showIndicators={true}
-                swipeable={true}
-                interval={3000}
-              > */}
-              <img src={image1} width="200px" alt="image1" />
-              {/* </Carousel> */}
-            </div>
+          <div className="col-md-12" style={{ textAlign: "center" }}>
+            <h1>Mythical Narwhals coming soon...</h1>
           </div>
-          <div className="col-md-2" style={{ marginTop: "5px" }}>
-            <div className="comming_soon_box" style={{ borderRadius: "10px" }}>
-              <img src={image2} width="200px" alt="image1" />
-            </div>
+          <div
+            className="col-md-6"
+            style={{
+              display: "grid",
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: "5px",
+            }}
+          >
+            <h4>Only</h4>
+            <h4> 300 will</h4>
+            <h4> ever exist</h4>
           </div>
-          <div className="col-md-2" style={{ marginTop: "5px" }}>
-            <div className="comming_soon_box" style={{ borderRadius: "10px" }}>
-              <img src={image3} width="200px" alt="image1" />
-            </div>
-          </div>
-          <div className="col-md-2" style={{ marginTop: "5px" }}>
-            <div className="comming_soon_box" style={{ borderRadius: "10px" }}>
-              <img src={image4} width="200px" alt="image1" />
-            </div>
-          </div>
-          <div className="col-md-2" style={{ marginTop: "5px" }}>
-            <div className="comming_soon_box" style={{ borderRadius: "10px" }}>
-              <img src={image5} width="200px" alt="image1" />
-            </div>
-          </div>
-          <div className="col-md-2" style={{ marginTop: "5px" }}>
-            <div className="comming_soon_box" style={{ borderRadius: "10px" }}>
-              <img src={image7} width="200px" alt="image1" />
-            </div>
-          </div>
-          <div className="col-md-2" style={{ marginTop: "15px" }}>
-            <div className="comming_soon_box" style={{ borderRadius: "10px" }}>
-              <img src={image3} width="200px" alt="image1" />
-            </div>
-          </div>
-          <div className="col-md-2" style={{ marginTop: "15px" }}>
-            <div className="comming_soon_box" style={{ borderRadius: "10px" }}>
-              <img src={image1} width="200px" alt="image1" />
-            </div>
-          </div>
-          <div className="col-md-2" style={{ marginTop: "15px" }}>
-            <div className="comming_soon_box" style={{ borderRadius: "10px" }}>
-              <img src={image4} width="200px" alt="image1" />
-            </div>
-          </div>
-          <div className="col-md-2" style={{ marginTop: "15px" }}>
-            <div className="comming_soon_box" style={{ borderRadius: "10px" }}>
-              <img src={image3} width="200px" alt="image1" />
-            </div>
-          </div>
-          <div className="col-md-2" style={{ marginTop: "15px" }}>
-            <div className="comming_soon_box" style={{ borderRadius: "10px" }}>
-              <img src={image1} width="200px" alt="image1" />
-            </div>
-          </div>
-          <div className="col-md-2" style={{ marginTop: "15px" }}>
-            <div className="comming_soon_box" style={{ borderRadius: "10px" }}>
-              <img src={image6} width="200px" alt="image1" />
-            </div>
-          </div>
-          <div className="col-md-12" style={{ marginTop: "40px" }}>
+          <div
+            className="col-md-6"
+            style={{
+              display: "grid",
+              marginTop: "5px",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <div className="coming_soon_content">
-              <h2>Mythical Narwhals coming soon...</h2>
-              <h2>Only 300 will ever exist.</h2>
-              <h4>Special utility includes:</h4>
               <ul className="comming_soon_points">
-                <li>5x the staking rewards</li>
-                <li>5 votes in the DAO</li>
-                <li>Priority WL with parnerships</li>
-                <li>And much more</li>
                 <li>
-                  <a href="">Join our discord to earn your free mint</a>
+                  <h4>Special utility includes</h4>
                 </li>
+                <li style={{ listStyleType: "initial" }}>
+                  <span>5x the staking rewards</span>
+                </li>
+                <li style={{ listStyleType: "initial" }}>
+                  <span>5 votes in the DAO</span>
+                </li>
+                <li style={{ listStyleType: "initial" }}>
+                  <span>Priority WL with parnerships</span>
+                </li>
+                <li style={{ listStyleType: "initial" }}>
+                  <span>And much more</span>
+                </li>
+                {/* <li>
+                  <a href="">Join our discord to earn your free mint</a>
+                </li> */}
               </ul>
             </div>
           </div>
+          <div
+            className="row"
+            style={{ marginTop: "50px", marginBottom: "50px" }}
+          >
+            <Marquee speed={40} direction="right" gradient={false}>
+              <div className="imagefield">
+                <img
+                  src={image8}
+                  width="200px"
+                  style={{ borderRadius: "20px" }}
+                  alt="image1"
+                />
+              </div>
+              <div className="imagefield">
+                <img
+                  src={image9}
+                  width="200px"
+                  style={{ borderRadius: "20px" }}
+                  alt="image1"
+                />
+              </div>
+              <div className="imagefield">
+                <img
+                  src={image10}
+                  width="200px"
+                  style={{ borderRadius: "20px" }}
+                  alt="image1"
+                />
+              </div>
+              <div className="imagefield">
+                <img
+                  src={image11}
+                  width="200px"
+                  style={{ borderRadius: "20px" }}
+                  alt="image1"
+                />
+              </div>
+              <div className="imagefield">
+                <img
+                  src={image12}
+                  width="200px"
+                  style={{ borderRadius: "20px" }}
+                  alt="image1"
+                />
+              </div>
+              <div className="imagefield">
+                <img
+                  src={image13}
+                  width="200px"
+                  style={{ borderRadius: "20px" }}
+                  alt="image1"
+                />
+              </div>
+              <div className="imagefield">
+                <img
+                  src={image14}
+                  width="200px"
+                  style={{ borderRadius: "20px" }}
+                  alt="image1"
+                />
+              </div>
+              <div className="imagefield">
+                <img
+                  src={image15}
+                  width="200px"
+                  style={{ borderRadius: "20px" }}
+                  alt="image1"
+                />
+              </div>
+              <div className="imagefield">
+                <img
+                  src={image16}
+                  width="200px"
+                  style={{ borderRadius: "20px" }}
+                  alt="image1"
+                />
+              </div>
+              <div className="imagefield">
+                <img
+                  src={image17}
+                  width="200px"
+                  style={{ borderRadius: "20px" }}
+                  alt="image1"
+                />
+              </div>
+              <div className="imagefield">
+                <img
+                  src={image18}
+                  width="200px"
+                  style={{ borderRadius: "20px" }}
+                  alt="image1"
+                />
+              </div>
+            </Marquee>
+          </div>
         </div>
       </div>
-      <svg
-        className="comming_soon_waves_bottom"
-        xml="http://www.w3.org/2000/svg"
-        link="http://www.w3.org/1999/xlink"
-        viewBox="0 24 150 28"
-        preserveAspectRatio="none"
-        shapeRendering="auto"
-      >
-        <defs>
-          <path
-            id="gentle-wave"
-            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-          />
-        </defs>
-        <g className="parallax">
-          <use href="#gentle-wave" x="48" y="0" fill="#b3ebff30" />
-          <use href="#gentle-wave" x="48" y="3" fill="#b3ebff50" />
-          <use href="#gentle-wave" x="48" y="5" fill="#b3ebff90" />
-          <use href="#gentle-wave" x="48" y="7" fill="#d4f4ff" />
-        </g>
-      </svg>
-    </section>
+    </Section>
   );
 }

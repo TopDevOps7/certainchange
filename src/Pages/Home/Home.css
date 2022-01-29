@@ -1,8 +1,8 @@
 .hero_section {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
-  height: calc(100vh);
+  /* height: calc(100vh); */
   background-color: transparent;
   background-image: url(../../Assets/images/whitepaper.jpg);
   background-size: cover;
@@ -177,15 +177,17 @@
   border-radius: 50px;
 }
 
+/*  */
+
 /* Mint */
 
 .mint {
-  padding: 480px 0 100px 0;
+  padding: 100px 0 0px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #6dc9f3;
+  background-color: #04befeba;
   position: relative;
 }
 .carousel .control-dots {
@@ -273,7 +275,7 @@
 /* Our Vision */
 
 .ourvision {
-  padding: 100px 0;
+  padding: 0px 0;
 }
 .ourvision_content {
   font-size: 22px;
@@ -287,18 +289,21 @@
 /* Roadmap */
 
 .roadmap {
-  padding: 100px 0;
-  background-color: #b3ebff90;
+  padding: 0px 0;
+  background-color: #04befe;
   position: relative;
   overflow: hidden;
 }
+.imagefield {
+  margin-left: 15px;
+}
 .roadmap::after {
   content: "";
-  height: calc(100% - 350px);
+  height: calc(100% - 260px);
   width: 0px;
   border-right: 3px dotted #6c6c6c47;
   position: absolute;
-  top: 220px;
+  top: 330px;
   left: 50%;
 }
 .roadmap_box {
@@ -371,7 +376,7 @@
 }
 .roadmap_box .roadmap_title {
   font-size: 30px;
-  color: #374a55;
+  color: #fff;
 }
 
 .left_box .roadmap_image {
@@ -396,7 +401,7 @@
 /* Our Team */
 
 .ourteam {
-  padding: 100px 0;
+  padding: 0px 0;
 }
 .ourteam_box {
   width: 100%;
@@ -405,11 +410,16 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  cursor: pointer;
 }
-
+.ourteam_box_img:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
 .ourteam_box_img {
-  height: 300px;
-  width: 100%;
+  transition: transform 500ms ease-in-out;
+  height: 250px;
+  width: 60%;
   background-color: #6f91dd;
   border-radius: 20px;
   position: relative;
@@ -560,9 +570,10 @@
 /* gallery  */
 
 .gallery {
-  padding: 0 0 300px 0;
+  padding: 50px 0 0px 0;
   position: relative;
   overflow: hidden;
+  background-color: #04befe;
 }
 .gallery::after {
   content: "";
@@ -571,7 +582,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url(./../../Assets/images/line_back.png);
+  /* background-image: url(./../../Assets/images/line_back.png); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -1025,12 +1036,12 @@ footer {
 
 .comming_soon {
   height: 100%;
-  padding: 100px 0;
+  padding: 70px 0;
   width: 100%;
-  display: flex;
+  /* display: grid; */
   justify-content: center;
   align-items: center;
-  background-color: #b3ebff90;
+  background-color: #fff;
   position: relative;
   margin: 0;
 }
@@ -1073,6 +1084,7 @@ footer {
 }
 .white_content {
   font-size: 25px;
+  width: 80% !important;
 }
 .coming_soon_content h2 {
   color: #000;
